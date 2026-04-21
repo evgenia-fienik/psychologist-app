@@ -20,7 +20,9 @@
   font-size: 16px;
   line-height: 1.25;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .input::placeholder {
@@ -29,7 +31,6 @@
 
 .input:focus {
   border-color: var(--color-primary);
-
 }
 
 .inputError {
@@ -55,7 +56,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: #191a15;;
+  color: #191a15;
 }
 
 .error {
@@ -71,7 +72,7 @@
   height: 52px;
   border: none;
   border-radius: 30px;
-  background-color: var( --color-primary);
+  background-color: var(--color-primary);
   color: #fbfbfb;
   font-size: 16px;
   font-weight: 500;
@@ -82,7 +83,7 @@
 
 .submitButton:hover,
 .submitButton:focus {
-  background-color:var( --color-primary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .submitButton:disabled {

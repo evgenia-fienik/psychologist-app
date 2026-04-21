@@ -1,9 +1,8 @@
 :root {
   /* Шрифти */
-  --font-main: 'Inter', sans-serif;
+  --font-main: "Inter", sans-serif;
 
   /* Основні кольори */
-  --color-bg:#f3f3f3;
+  --color-bg: #f3f3f3;
   --color-text: #191a15;
-
 }

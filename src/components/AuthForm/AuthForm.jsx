@@ -50,7 +50,7 @@ export default function AuthForm({ type, closeModal }) {
   });
 
   const onSubmit = async (data) => {
-    clearErrors('root')
+    clearErrors("root");
     try {
       if (isRegister) {
         const userCredential = await createUserWithEmailAndPassword(
@@ -139,7 +139,11 @@ export default function AuthForm({ type, closeModal }) {
             onClick={() => setShowPassword((prev) => !prev)}
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? <IoEyeOutline size={18} /> : <IoEyeOffOutline size={18} />}
+            {showPassword ? (
+              <IoEyeOutline size={18} />
+            ) : (
+              <IoEyeOffOutline size={18} />
+            )}
           </button>
         </div>
 
@@ -148,7 +152,11 @@ export default function AuthForm({ type, closeModal }) {
 
       <p className={styles.error}>{errors.root?.message}</p>
 
-      <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+      <button
+        className={styles.submitButton}
+        type="submit"
+        disabled={isSubmitting}
+      >
         {isRegister ? "Sign Up" : "Log In"}
       </button>
     </form>

@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header/Header.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import Layout from "./components/Layout/Layout.jsx";
-import PsychologistsPage from "./pages/PsychologistsPage/PsychologistsPage.jsx"
-import FavoritesPage from './pages/FavoritesPage/FavoritesPage.jsx'
+import PsychologistsPage from "./pages/PsychologistsPage/PsychologistsPage.jsx";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage.jsx";
 
 import "./styles/index.css";
 import "./App.css";

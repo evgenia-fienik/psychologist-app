@@ -9,8 +9,6 @@
   background: transparent;
 }
 
-
-
 .container {
   width: 100%;
   max-width: 1440px;
@@ -77,7 +75,7 @@
   position: absolute;
   left: 50%;
 
- bottom: -14px;
+  bottom: -14px;
   transform: translateX(-50%);
 
   width: 8px;
@@ -124,7 +122,10 @@
   font-size: 16px;
   line-height: 1.25;
   cursor: pointer;
-  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease;
 }
 
 .logBtn,
@@ -154,7 +155,7 @@
   background-color: var(--color-primary-dark);
 }
 
-.mobileOverlay{
+.mobileOverlay {
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -163,15 +164,15 @@
 
 .mobileMenu {
   position: fixed;
-  top:0;
-  right:0;
-  bottom:0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1000;
   width: 33vw;
   min-width: 260px;
   max-width: 320px;
 
-background-color: #fff;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -255,7 +256,10 @@ background-color: #fff;
   padding: 0;
   cursor: pointer;
   opacity: 0.7;
-  transition: transform 200ms ease, opacity 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .themeDot:hover,

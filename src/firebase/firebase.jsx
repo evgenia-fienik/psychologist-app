@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "psychologists-app-eaede.firebasestorage.app",
   messagingSenderId: "705852059224",
   appId: "1:705852059224:web:328beda53212f17aa6242d",
-  measurementId: "G-5G0RSJY5WZ"
+  measurementId: "G-5G0RSJY5WZ",
 };
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

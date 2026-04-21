@@ -46,11 +46,11 @@
 }
 
 .button {
-    display: flex;
-    align-items: center;
-    gap:8px;
-   min-height: 48px;
-   font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   padding: 14px 32px;
@@ -63,8 +63,8 @@
 
 .button:hover,
 .button:focus {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .imgWrap {
@@ -91,7 +91,6 @@
   display: flex;
   align-items: center;
   gap: 16px;
-
 
   padding: 13px 15px;
   border-radius: 10px;
@@ -127,8 +126,7 @@
 .statLabel {
   margin: 0;
   font-size: 12px;
- color: rgba(251, 251, 251, 0.5);
-  
+  color: rgba(251, 251, 251, 0.5);
 }
 
 .statValue {
@@ -162,7 +160,6 @@
 .questionDecor span {
   display: inline-block;
   transform: rotate(15deg);
-
 }
 
 /* жовтий квадратик */
@@ -190,7 +187,6 @@
   line-height: 1;
 }
 
-
 @media screen and (min-width: 768px) {
   .hero {
     padding: 40px 0 80px;
@@ -215,43 +211,39 @@
   }
 
   .statCard {
-  left: -40px;
-  bottom: 45px;
+    left: -40px;
+    bottom: 45px;
 
-  padding: 18px 20px;
-  border-radius: 12px;
-}
+    padding: 18px 20px;
+    border-radius: 12px;
+  }
 
-.statIconBox {
-  width: 40px;
-  height: 40px;
-}
+  .statIconBox {
+    width: 40px;
+    height: 40px;
+  }
 
-.statIcon {
-  font-size: 16px;
-}
+  .statIcon {
+    font-size: 16px;
+  }
 
-.questionDecor {
-  left: -28px;
-  top: 36%;
+  .questionDecor {
+    left: -28px;
+    top: 36%;
 
-  width: 35px;
-  height: 35px;
-  
-}
+    width: 35px;
+    height: 35px;
+  }
 
-/* жовтий квадратик */
+  /* жовтий квадратик */
 
-.usersDecor {
+  .usersDecor {
+    top: 48px;
+    right: -30px;
 
-  top: 48px;
-  right: -30px;
-
-  width: 40px;
-  height: 40px;
-}
-
-
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -275,7 +267,7 @@
     max-width: 510px;
   }
 
-  .button{
+  .button {
     font-size: 20px;
     padding: 18px 50px;
   }
@@ -285,46 +277,41 @@
   }
 
   .statCard {
-  left: -45px;
-  bottom: 76px;
+    left: -45px;
+    bottom: 76px;
 
-  padding: 20px 23px;
- border-radius: 15px;
-}
+    padding: 20px 23px;
+    border-radius: 15px;
+  }
 
-.statIconBox {
-  width: 50px;
-  height: 50px;
-}
+  .statIconBox {
+    width: 50px;
+    height: 50px;
+  }
 
-.statIcon {
-  font-size: 20px;
-}
-.statLabel {
-  font-weight: 400;
-  font-size: 14px;
-}
+  .statIcon {
+    font-size: 20px;
+  }
+  .statLabel {
+    font-weight: 400;
+    font-size: 14px;
+  }
 
-.statValue {
-  font-weight: 700;
-  font-size: 24px;
- 
-}
-
+  .statValue {
+    font-weight: 700;
+    font-size: 24px;
+  }
 
   .questionDecor {
-  top: 34%;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-}
+    top: 34%;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
 
-.usersDecor {
-  right: -37px;
-  width: 48px;
-  height: 48px;
-}
-
-
-  
+  .usersDecor {
+    right: -37px;
+    width: 48px;
+    height: 48px;
+  }
 }

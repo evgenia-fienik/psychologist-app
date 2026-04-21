@@ -1,31 +1,23 @@
 /* Зелена тема */
-html[data-theme='theme-green']{
-  
+html[data-theme="theme-green"] {
   --color-primary: #54be96;
   --color-primary-dark: #36a379;
   --color-surface: rgba(84, 190, 150, 0.2);
-   --color-square: #4535af;
-
+  --color-square: #4535af;
 }
-
 
 /* Синя тема */
-html[data-theme='theme-blue'] {
-   
-   --color-primary:  #3470ff;
-   --color-primary-dark: #255ee8;
+html[data-theme="theme-blue"] {
+  --color-primary: #3470ff;
+  --color-primary-dark: #255ee8;
   --color-surface: rgba(52, 112, 255, 0.2);
-  --color-square: #54be96;;
-
+  --color-square: #54be96;
 }
-
 
 /* Помаранчева тема */
-html[data-theme='theme-orange'] {
-  
+html[data-theme="theme-orange"] {
   --color-primary: #fc832c;
-   --color-primary-dark: #f37113;
+  --color-primary-dark: #f37113;
   --color-surface: rgba(252, 131, 44, 0.2);
-  --color-square: #54be96;;
+  --color-square: #54be96;
 }
-

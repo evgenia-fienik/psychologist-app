@@ -8,11 +8,9 @@ import { FaUser } from "react-icons/fa6";
 import styles from "./Header.module.css";
 
 export default function Header({ variant = "default", theme, setTheme }) {
-
-
   const auth = useAuth();
   const user = auth?.user || null;
-  const logout = auth?.logout || (() => { });
+  const logout = auth?.logout || (() => {});
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalType, setModalType] = useState(null);
@@ -20,14 +18,10 @@ export default function Header({ variant = "default", theme, setTheme }) {
   const closeMenu = () => setMenuOpen(false);
 
   const userName =
-    user?.displayName?.trim() ||
-    user?.email?.split("@")[0] ||
-    "User";
+    user?.displayName?.trim() || user?.email?.split("@")[0] || "User";
 
   const getDesktopLinkClass = ({ isActive }) =>
-    isActive
-      ? `${styles.navLink} ${styles.activeLink}`
-      : styles.navLink;
+    isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink;
 
   const getMobileLinkClass = ({ isActive }) =>
     isActive
@@ -36,8 +30,9 @@ export default function Header({ variant = "default", theme, setTheme }) {
 
   return (
     <header
-      className={`${styles.header} ${variant === "home" ? styles.headerHome : styles.headerDefault
-        }`}
+      className={`${styles.header} ${
+        variant === "home" ? styles.headerHome : styles.headerDefault
+      }`}
     >
       <div className={styles.container}>
         <div className={styles.leftSide}>
@@ -73,8 +68,6 @@ export default function Header({ variant = "default", theme, setTheme }) {
         </button>
 
         <div className={styles.desktopAuth}>
-
-
           {user ? (
             <>
               <div className={styles.userBox}>
@@ -84,7 +77,11 @@ export default function Header({ variant = "default", theme, setTheme }) {
                 <span className={styles.userName}>{userName}</span>
               </div>
 
-              <button type="button" className={styles.logoutBtn} onClick={logout}>
+              <button
+                type="button"
+                className={styles.logoutBtn}
+                onClick={logout}
+              >
                 Log out
               </button>
             </>
@@ -107,25 +104,32 @@ export default function Header({ variant = "default", theme, setTheme }) {
               </button>
             </>
           )}
-          <div className={styles.themePicker} aria-label="Choose theme" role="group">
+          <div
+            className={styles.themePicker}
+            aria-label="Choose theme"
+            role="group"
+          >
             <button
               type="button"
-              className={`${styles.themeDot} ${theme === "theme-green" ? styles.active : ""
-                }`}
+              className={`${styles.themeDot} ${
+                theme === "theme-green" ? styles.active : ""
+              }`}
               onClick={() => setTheme("theme-green")}
               aria-label="Green theme"
             />
             <button
               type="button"
-              className={`${styles.themeDot} ${theme === "theme-blue" ? styles.active : ""
-                }`}
+              className={`${styles.themeDot} ${
+                theme === "theme-blue" ? styles.active : ""
+              }`}
               onClick={() => setTheme("theme-blue")}
               aria-label="Blue theme"
             />
             <button
               type="button"
-              className={`${styles.themeDot} ${theme === "theme-orange" ? styles.active : ""
-                }`}
+              className={`${styles.themeDot} ${
+                theme === "theme-orange" ? styles.active : ""
+              }`}
               onClick={() => setTheme("theme-orange")}
               aria-label="Orange theme"
             />
@@ -135,119 +139,131 @@ export default function Header({ variant = "default", theme, setTheme }) {
 
       {menuOpen && (
         <div className={styles.mobileOverlay} onClick={closeMenu}>
-        <div className={styles.mobileMenu} onClick={(e) => e.stopPropagation()}>
-          <button
-            type="button"
-            className={styles.closeBtn}
-            onClick={closeMenu}
-            aria-label="Close menu"
+          <div
+            className={styles.mobileMenu}
+            onClick={(e) => e.stopPropagation()}
           >
-            <IoCloseOutline size={24} />
-          </button>
-
-          <nav className={styles.mobileNav}>
-            <NavLink to="/" end className={getMobileLinkClass} onClick={closeMenu}>
-              Home
-            </NavLink>
-
-            <NavLink
-              to="/psychologists"
-              className={getMobileLinkClass}
+            <button
+              type="button"
+              className={styles.closeBtn}
               onClick={closeMenu}
+              aria-label="Close menu"
             >
-              Psychologists
-            </NavLink>
+              <IoCloseOutline size={24} />
+            </button>
 
-            {user && (
+            <nav className={styles.mobileNav}>
               <NavLink
-                to="/favorites"
+                to="/"
+                end
                 className={getMobileLinkClass}
                 onClick={closeMenu}
               >
-                Favorites
+                Home
               </NavLink>
-            )}
-          </nav>
 
-          <div className={styles.mobileAuth}>
-            {user ? (
-              <>
-                <div className={styles.userBox}>
-                  <span className={styles.userIcon}>
-                    <FaUser size={18} />
-                  </span>
-                  <span className={styles.userName}>{userName}</span>
-                </div>
+              <NavLink
+                to="/psychologists"
+                className={getMobileLinkClass}
+                onClick={closeMenu}
+              >
+                Psychologists
+              </NavLink>
 
+              {user && (
+                <NavLink
+                  to="/favorites"
+                  className={getMobileLinkClass}
+                  onClick={closeMenu}
+                >
+                  Favorites
+                </NavLink>
+              )}
+            </nav>
+
+            <div className={styles.mobileAuth}>
+              {user ? (
+                <>
+                  <div className={styles.userBox}>
+                    <span className={styles.userIcon}>
+                      <FaUser size={18} />
+                    </span>
+                    <span className={styles.userName}>{userName}</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.logoutBtn}
+                    onClick={() => {
+                      logout();
+                      closeMenu();
+                    }}
+                  >
+                    Log out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    className={styles.logBtn}
+                    onClick={() => {
+                      setModalType("login");
+                      closeMenu();
+                    }}
+                  >
+                    Log In
+                  </button>
+
+                  <button
+                    type="button"
+                    className={styles.regBtn}
+                    onClick={() => {
+                      setModalType("register");
+                      closeMenu();
+                    }}
+                  >
+                    Registration
+                  </button>
+                </>
+              )}
+              <div
+                className={styles.themePicker}
+                aria-label="Choose theme"
+                role="group"
+              >
                 <button
                   type="button"
-                  className={styles.logoutBtn}
-                  onClick={() => {
-                    logout();
-                    closeMenu();
-                  }}
-                >
-                  Log out
-                </button>
-              </>
-            ) : (
-              <>
+                  className={`${styles.themeDot} ${
+                    theme === "theme-green" ? styles.active : ""
+                  }`}
+                  onClick={() => setTheme("theme-green")}
+                  aria-label="Green theme"
+                />
                 <button
                   type="button"
-                  className={styles.logBtn}
-                  onClick={() => {
-                    setModalType("login");
-                    closeMenu();
-                  }}
-                >
-                  Log In
-                </button>
-
+                  className={`${styles.themeDot} ${
+                    theme === "theme-blue" ? styles.active : ""
+                  }`}
+                  onClick={() => setTheme("theme-blue")}
+                  aria-label="Blue theme"
+                />
                 <button
                   type="button"
-                  className={styles.regBtn}
-                  onClick={() => {
-                    setModalType("register");
-                    closeMenu();
-                  }}
-                >
-                  Registration
-                </button>
-              </>
-            )}
-            <div className={styles.themePicker} aria-label="Choose theme" role="group">
-              <button
-                type="button"
-                className={`${styles.themeDot} ${theme === "theme-green" ? styles.active : ""
+                  className={`${styles.themeDot} ${
+                    theme === "theme-orange" ? styles.active : ""
                   }`}
-                onClick={() => setTheme("theme-green")}
-                aria-label="Green theme"
-              />
-              <button
-                type="button"
-                className={`${styles.themeDot} ${theme === "theme-blue" ? styles.active : ""
-                  }`}
-                onClick={() => setTheme("theme-blue")}
-                aria-label="Blue theme"
-              />
-              <button
-                type="button"
-                className={`${styles.themeDot} ${theme === "theme-orange" ? styles.active : ""
-                  }`}
-                onClick={() => setTheme("theme-orange")}
-                aria-label="Orange theme"
-              />
+                  onClick={() => setTheme("theme-orange")}
+                  aria-label="Orange theme"
+                />
+              </div>
             </div>
           </div>
-        </div>
         </div>
       )}
 
       {modalType && (
-        <AuthModal
-          type={modalType}
-          onClose={() => setModalType(null)}
-        />
+        <AuthModal type={modalType} onClose={() => setModalType(null)} />
       )}
     </header>
   );

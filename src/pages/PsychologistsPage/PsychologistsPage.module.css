@@ -1,59 +1,55 @@
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 16px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px;
 }
 
 .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .loadMoreWrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 .loadMoreBtn {
-
-    border-radius: 30px;
-    border: none;
-    padding: 14px 48px;
-    background-color: var(--color-primary);
-    color: var(--color-button-text, #fbfbfb);
-    cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  padding: 14px 48px;
+  background-color: var(--color-primary);
+  color: var(--color-button-text, #fbfbfb);
+  cursor: pointer;
 }
 
 .loadMoreBtn:hover,
 .loadMoreBtn:focus {
-    background-color: var(--color-primary-dark);
-
+  background-color: var(--color-primary-dark);
 }
 
-
 @media screen and (min-width: 768px) {
-    .container {
-        padding: 32px 24px;
-    }
+  .container {
+    padding: 32px 24px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1440px;
-        padding: 40px 64px;
-    }
+  .container {
+    max-width: 1440px;
+    padding: 40px 64px;
+  }
 
+  .list {
+    gap: 24px;
+  }
 
-    .list {
-        gap: 24px;
-    }
-
-    .filterSelect {
-        padding: 16px 162px 16px 18px;
-    }
+  .filterSelect {
+    padding: 16px 162px 16px 18px;
+  }
 }

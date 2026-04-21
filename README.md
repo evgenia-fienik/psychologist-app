@@ -1,16 +1,54 @@
-# React + Vite
+# Psychologists.Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for a company offering professional psychologist services. Users can browse psychologists, filter them by various criteria, save favorites, and book appointments.
 
-Currently, two official plugins are available:
+## 🔗 Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🌐 [Live Demo](https://psychologist-app-tau.vercel.app/)
+- 🎨 [Figma Mockup](https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services)
+- 📁 [GitHub Repository](https://github.com/evgenia-fienik/psychologist-app)
 
-## React Compiler
+## 📋 About the Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application consists of 3 pages:
 
-## Expanding the ESLint configuration
+- **Home** — landing page with a company slogan and a call-to-action button
+- **Psychologists** — a list of psychologists with filtering and pagination
+- **Favorites** — a private page for authorized users with saved psychologists
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Features
+
+- 🔐 Authentication — registration, login, logout via Firebase Auth
+- 📋 Psychologist cards with detailed info and client reviews
+- ❤️ Add/remove psychologists to favorites (saved in Firebase per user)
+- 🔍 Filter by alphabet, price, and popularity
+- 📄 Pagination — load 3 cards at a time via "Load more"
+- 📅 Appointment booking form with validation
+- 🎨 3 color themes (green, blue, orange)
+- 📱 Fully responsive — from 320px to 1440px
+
+## 🛠️ Technologies
+
+| Technology | Purpose |
+|---|---|
+| React | UI library |
+| Vite | Build tool |
+| React Router DOM | Routing |
+| Firebase Auth | Authentication |
+| Firebase Realtime Database | Data storage |
+| React Hook Form | Form management |
+| Yup | Form validation |
+| React Icons | Icons |
+| CSS Modules | Styling |
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/evgenia-fienik/psychologist-app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev

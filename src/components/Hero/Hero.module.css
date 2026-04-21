@@ -1,0 +1,330 @@
+.hero {
+  width: 100%;
+  padding: 24px 0 64px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.content {
+  justify-self: start;
+  margin: 0;
+}
+
+.title {
+  margin: 0 0 20px;
+  max-width: 100%;
+
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #191a15;
+}
+
+.textAccent {
+  color: var(--color-primary);
+  font-style: italic;
+}
+
+.text {
+  margin: 0 0 24px;
+  max-width: 620px;
+
+  font-size: 14px;
+  line-height: 1.3;
+  color: #191a15;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap:8px;
+   min-height: 48px;
+   font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--color-primary);
+  color: #fbfbfb;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.imgWrap {
+  position: relative;
+  width: 100%;
+  max-width: 335px;
+  justify-self: center;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+/* зелений блок */
+.statCard {
+  position: absolute;
+  left: -15px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+
+  padding: 13px 15px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(84, 190, 150, 0.18);
+}
+
+.statIconBox {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIcon {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  margin: 0;
+  font-size: 12px;
+ color: rgba(251, 251, 251, 0.5);
+  
+}
+
+.statValue {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fbfbfb;
+}
+
+/* фіолетовий квадратик */
+.questionDecor {
+  position: absolute;
+  left: -15px;
+  top: 30%;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  background-color: var(--color-square);
+  color: #fbfbfb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+  line-height: 1;
+  transform: rotate(-15deg);
+  box-shadow: 0 12px 24px rgba(69, 53, 175, 0.2);
+}
+.questionDecor span {
+  display: inline-block;
+  transform: rotate(15deg);
+
+}
+
+/* жовтий квадратик */
+.usersDecor {
+  position: absolute;
+  top: 35px;
+  right: -15px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #fbc75e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(15deg);
+  box-shadow: 0 12px 24px rgba(251, 199, 94, 0.25);
+}
+
+.usersIcon {
+  color: #fbfbfb;
+  font-size: 20px;
+  line-height: 1;
+}
+
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 40px 0 80px;
+  }
+
+  .container {
+    padding: 0 32px;
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .imgWrap {
+    max-width: 464px;
+  }
+
+  .statCard {
+  left: -40px;
+  bottom: 45px;
+
+  padding: 18px 20px;
+  border-radius: 12px;
+}
+
+.statIconBox {
+  width: 40px;
+  height: 40px;
+}
+
+.statIcon {
+  font-size: 16px;
+}
+
+.questionDecor {
+  left: -28px;
+  top: 36%;
+
+  width: 35px;
+  height: 35px;
+  
+}
+
+/* жовтий квадратик */
+
+.usersDecor {
+
+  top: 48px;
+  right: -30px;
+
+  width: 40px;
+  height: 40px;
+}
+
+
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding: 78px 0 100px;
+  }
+
+  .container {
+    padding: 0 64px;
+    grid-template-columns: minmax(0, 1fr) 464px;
+    align-items: center;
+    gap: 125px;
+  }
+
+  .title {
+    max-width: 595px;
+    font-size: 80px;
+  }
+
+  .text {
+    max-width: 510px;
+  }
+
+  .button{
+    font-size: 20px;
+    padding: 18px 50px;
+  }
+  .imgWrap {
+    max-width: 464px;
+    justify-self: end;
+  }
+
+  .statCard {
+  left: -45px;
+  bottom: 76px;
+
+  padding: 20px 23px;
+ border-radius: 15px;
+}
+
+.statIconBox {
+  width: 50px;
+  height: 50px;
+}
+
+.statIcon {
+  font-size: 20px;
+}
+.statLabel {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.statValue {
+  font-weight: 700;
+  font-size: 24px;
+ 
+}
+
+
+  .questionDecor {
+  top: 34%;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.usersDecor {
+  right: -37px;
+  width: 48px;
+  height: 48px;
+}
+
+
+  
+}

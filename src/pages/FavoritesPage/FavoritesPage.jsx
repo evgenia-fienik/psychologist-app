@@ -13,16 +13,25 @@ export default function FavoritesPage() {
   const [favorites, setFavorites] = useState([]);
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [filter, setFilter] = useState("A to Z");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!user) return;
     const fetchFavorites = async () => {
-      const snapshot = await get(ref(db, `users/${user.uid}/favorites`));
-      if (snapshot.exists()) {
-        const data = snapshot.val();
-        const list = Array.isArray(data) ? data : Object.values(data);
-        setFavorites(list);
+      try {
+
+
+        const snapshot = await get(ref(db, `users/${user.uid}/favorites`));
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          const list = Array.isArray(data) ? data : Object.values(data);
+          setFavorites(list);
+        }
       }
+      finally {
+        setIsLoading(false);
+      }
+
     };
     fetchFavorites();
   }, [user]);
@@ -56,41 +65,51 @@ export default function FavoritesPage() {
 
   return (
     <div className={styles.container}>
-      <FilterDropdown
-        value={filter}
-        onChange={(val) => {
-          setFilter(val);
-          setVisible(PAGE_SIZE);
-        }}
-      />
-
-      {filtered.length === 0 && (
-        <p className={styles.empty}>No favorites yet 🤍</p>
-      )}
-
-      <ul className={styles.list}>
-        {filtered.slice(0, visible).map((p, i) => (
-          <li key={i}>
-            <PsychologistCard
-              psychologist={p}
-              isFavorite={true}
-              onToggleFavorite={handleToggleFavorite}
-              isLoggedIn={!!user}
-            />
-          </li>
-        ))}
-      </ul>
-
-      {visible < filtered.length && (
-        <div className={styles.loadMoreWrap}>
-          <button
-            type="button"
-            className={styles.loadMoreBtn}
-            onClick={() => setVisible((v) => v + PAGE_SIZE)}
-          >
-            Load more
-          </button>
+      {isLoading && (
+        <div className={styles.loaderWrap}>
+          <span className={styles.loader} />
         </div>
+      )}
+      {!isLoading && (
+        <>
+
+          <FilterDropdown
+            value={filter}
+            onChange={(val) => {
+              setFilter(val);
+              setVisible(PAGE_SIZE);
+            }}
+          />
+
+          {filtered.length === 0 && (
+            <p className={styles.empty}>No favorites yet 🤍</p>
+          )}
+
+          <ul className={styles.list}>
+            {filtered.slice(0, visible).map((p, i) => (
+              <li key={i}>
+                <PsychologistCard
+                  psychologist={p}
+                  isFavorite={true}
+                  onToggleFavorite={handleToggleFavorite}
+                  isLoggedIn={!!user}
+                />
+              </li>
+            ))}
+          </ul>
+
+          {visible < filtered.length && (
+            <div className={styles.loadMoreWrap}>
+              <button
+                type="button"
+                className={styles.loadMoreBtn}
+                onClick={() => setVisible((v) => v + PAGE_SIZE)}
+              >
+                Load more
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
